@@ -1,0 +1,31 @@
+  × Failed to build `ncp==1.15`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta:__legacy__.build_wheel` failed (exit code: 1)
+
+      [stderr]
+      Traceback (most recent call last):
+        File "<string>", line 14, in <module>
+        File "C:\Users\culai\AppData\Local\uv\cache\builds-v0\.tmp73g8K7\Lib\site-packages\setuptools\build_meta.py", line 331, in
+      get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "C:\Users\culai\AppData\Local\uv\cache\builds-v0\.tmp73g8K7\Lib\site-packages\setuptools\build_meta.py", line 301, in
+      _get_build_requires
+          self.run_setup()
+        File "C:\Users\culai\AppData\Local\uv\cache\builds-v0\.tmp73g8K7\Lib\site-packages\setuptools\build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "C:\Users\culai\AppData\Local\uv\cache\builds-v0\.tmp73g8K7\Lib\site-packages\setuptools\build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 5, in <module>
+        File "C:\Users\culai\AppData\Local\uv\cache\sdists-v9\pypi\ncp\1.15\LA7Rz5lmJFvLTt3cEnqRd\src\ncp\app.py", line 9, in <module>
+          from jinja2 import Environment, FileSystemLoader
+      ModuleNotFoundError: No module named 'jinja2'
+
+      hint: This error likely indicates that `ncp@1.15` depends on `jinja2`, but doesn't declare it as a build dependency. If `ncp` is a
+      first-party package, consider adding `jinja2` to its `build-system.requires`. Otherwise, either add it to your `pyproject.toml` under:
+
+      [tool.uv.extra-build-dependencies]
+      ncp = ["jinja2"]
+
+      or `uv pip install jinja2` into the environment and re-run with `--no-build-isolation`.
+  help: If you want to add the package regardless of the failed resolution, provide the `--frozen` flag to skip locking and syncing.
