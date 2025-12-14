@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "jinja2>=3.1.6",
-    "ncp>=1.15",
+    "mcp[cli]>=1.15",
     "setuptools>=80.9.0",
 ]
 
